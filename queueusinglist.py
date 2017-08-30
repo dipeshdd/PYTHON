@@ -24,10 +24,8 @@ if __name__=="__main__":
 		ch=int(input("Enter your choice :"))			
 		if ch==1:
 			enqueue(l1)
-			continue;
 		if ch==2:
 			dequeue(l1)
-			continue;
 		if ch==3:
 			print("Displaying the QUEUE...")
 			print(l1)
@@ -36,4 +34,3 @@ if __name__=="__main__":
 			break;
 		if ch<1 or ch>4:
 			print("Please read the Menu Properly...")
-			continue;
