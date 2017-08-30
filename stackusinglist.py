@@ -28,14 +28,11 @@ if __name__=="__main__":
 		ch=int(input("Enter your choice :"))			
 		if ch==1:
 			push(l1)
-			continue;
 		if ch==2:
 			pop(l1)
-			continue;
 		if ch==3:
 			print("PEEP operation gives top of Stack...")
 			peep(l1)
-			continue;
 		if ch==4:
 			print("Displaying the Stack...")
 			print(l1)
@@ -44,6 +41,5 @@ if __name__=="__main__":
 			break;
 		if ch<1 or ch>6:
 			print("Please read the Menu Properly...")
-			continue;
 
 		
