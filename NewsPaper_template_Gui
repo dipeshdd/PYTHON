@@ -1,0 +1,45 @@
+from tkinter import *
+from PIL import ImageTk , Image
+import os
+def line_break(text):
+    new_text=""
+    for i in range (0, len(text)):
+        new_text=new_text+text[i]
+        if i%100==0 and i!=0:
+            new_text=new_text+'\n'
+    return new_text        
+obj=Tk()
+obj.geometry("900x660")
+obj.minsize(900,660)
+obj.maxsize(900,660)
+obj.title("NewsPaper")
+heading=Label(text="Hindustan",bg="white",fg="red",font="comicsanms 30 bold",pady=20,borderwidth=5,relief=RIDGE)
+heading.pack(fill=X)
+date=Label(text="Date:01/10/2020 ,MONDAY",bg="white",fg="black",font="comicsanms 10 bold",borderwidth=1,relief=RIDGE)
+date.pack(fill=X)
+
+os.chdir(r"Enter Path of text File ")
+
+texts=[]
+images=[]
+for file in os.listdir():
+        with open(f"{file}") as f:
+            txt=f.read()
+            texts.append(line_break(txt))
+            
+os.chdir(r"Enter Path og Image File")
+
+for file in os.listdir():
+    img=Image.open(f"{file}")
+    img=img.resize((100,100))
+    images.append(ImageTk.PhotoImage(img))
+
+
+for i in range(0,5):
+    f1=Frame(obj,width=900,height=900)
+    Label(f1,text=texts[i],font="Vardan 10 bold").pack(side="left",padx=20)
+    Label(f1,image=images[i]).pack(padx=65)
+    f1.pack(anchor="w")    
+
+  
+obj.mainloop()
